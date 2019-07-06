@@ -24,7 +24,7 @@
 }
 
 .navbar {
-    background: #63748777;
+    background: #6889aec9;
 }
 
 .navbar-toggler {
@@ -123,7 +123,7 @@
     color: #ccc;
 }
 
-#topTips .col-md-3:hover {
+#topTips .col-md-4:hover {
     background: #007bff;
     cursor: pointer;
     transition: 0.7s;
@@ -221,6 +221,12 @@ h1::after {
     transition: 0.5s ease-in-out;
     align-items: center;
     display: inline;
+}
+
+/* medothology */
+
+.h5 {
+    font-size: 18px;
 }
 
 /* get in touch  */
