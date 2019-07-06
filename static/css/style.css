@@ -1,0 +1,266 @@
+
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.navbar-brand img {
+    height: 40px;
+    padding-left: 20px;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left;
+}
+
+#nav-bar ul li a:hover {
+    color: #007bff!important;
+}
+
+.navbar {
+    background: #ccc;
+}
+
+.navbar-toggler {
+    border: none!important;
+}
+
+.nav-link {
+    color: #555!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* slider */
+#slider {
+    width: 100%;
+}
+
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial!important;
+}
+
+.carousel-caption h2 {
+    color: #fff;
+    font-size: 42px;
+}
+
+.carousel-item img {
+    height: 90vh;
+    filter: brightness(50%)
+}
+
+#about {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555;
+}
+
+#about .btn {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* about us */
+.about-content {
+    padding-top: 20px;
+}
+
+#cellimage {
+    /* height: 100px; */
+    object-fit: cover;
+}
+
+
+
+/* topTips */
+#topTips {
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../images/multi-ethnic-business-people-P9YH7WW.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #efefef !important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#topTips h1 {
+    text-align: center;
+    color: #efefef;
+    padding-bottom: 10px;
+}
+
+#topTips h1::after {
+    content: '';
+    background: #efefef;
+    display: block;
+    height: 3px;
+    width: 300px;
+    margin: 20px auto 5px;
+}
+
+.icon {
+    font-size: 40px;
+    margin: 20px auto;
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+#topTips p, #topTips a {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+#topTips .col-md-3:hover {
+    background: #007bff;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+/* our team */
+#ourTeam {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555; 
+}
+
+h1 {
+    text-align: center;
+    color: #555 !important;
+    padding-bottom: 10px;
+}
+
+h1::after {
+    content: '';
+    background: #007bff;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+
+/* our team */
+.display-pic {
+    margin-top: 25px;
+}
+
+.img-responsive {
+    height: 250px;
+    width: 250px;
+}
+
+.display-pic .img-box {
+    opacity: 1;
+    display: block;
+    position: relative;
+}
+
+.display-pic .img-box img {
+    filter: grayscale(1);
+}
+
+.display-pic .img-box img:hover {
+    filter: grayscale(0);
+}
+
+.display-pic h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+    color:#007bff !important;
+}
+.display-pic h3 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#ourTeam .fab {
+    height: 20px;
+    width: 20px;
+    color: #007bff !important;
+    background:#fff;
+    padding: 2px;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.img-box ul {
+    padding: 10px 0;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: inline-block;
+}
+
+.img-box:hover ul li{
+    padding: 1px;
+    display: inline-block;
+}
+
+.img-box:hover ul {
+    opacity: 1;
+}
+
+.img-box ul, .img-box li {
+    transition: 0.5s ease-in-out;
+    align-items: center;
+    display: inline;
+}
+
+/* get in touch  */
+
+#contact {
+    background: #efefef;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #777;
+}
+
+.contact-form {
+    padding: 15px;
+}
+
+.form-control {
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+::placeholder {
+    color: #999 !important;
+}
+
+.follow {
+    background: #fff;
+    padding: 10px;
+    margin: 15px;    
+}
+
+.contact-info .fa {
+    margin: 10px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* footer */
+
+#footer {
+    background: #333;
+    color: #fff;
+    padding: 12px;
+}
