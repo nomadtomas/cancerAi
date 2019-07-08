@@ -223,10 +223,34 @@ h1::after {
     display: inline;
 }
 
-/* medothology */
+/* Methodology */
 
-.h5 {
-    font-size: 18px;
+.carousel-item img {
+    filter: none;
+}
+
+.carousel-item h5 {
+    font-size: 30px;
+    color: white;
+    text-align: top;
+    background: #555;
+}
+
+.carousel-item p {
+    font-size: 26px;
+    color: black;
+    position: bottom;
+    background: #ccc;
+    opacity: 0;
+    text-align: left;
+}
+
+.carousel-item p:hover {
+    font-size: 26px;
+    color: black;
+    position: bottom;
+    background: #ccc;
+    opacity: .8;
 }
 
 /* get in touch  */
