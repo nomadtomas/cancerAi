@@ -222,55 +222,71 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="static/images/vgg16.jpg" class="d-block w-100" alt="...">
+                <img src="../static/images/vgg16.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block" id="details">
-                  <h5>Why CNN and not Regular Neural Networks(FC)</h5><br>
-                  <p>Fully connected neural networks are good classifiers, however they aren't good for feature extraction. 
-                    Before the emergence on CNNs the state-of-the-art was to extract explicit features from images and then classify these features.  
-                    CNNs are trained to identify and extract the best features from the images for the problem at hand. That is their main strength. 
-                    The latter layers of a CNN are fully connected because of their strength as a classifier.
-                    CNN do not try to understand the entire problem at once. It looks at the input piece by piece, derives low level features, 
-                    through many layers, hierarchically. These helps the deep learning models to learn complicated patterns, by gradually building 
-                    them from simpler ones.  This helps them to not only ‘see’ the features but also see the hierarchy of how these features are built upon.
-                    </p>
+                  <h5>What is VGG16</h5><br>
+                  <p>
+                      VGG(Visual Geometry Group) is a Convolutional Neural Network architecture. It was submitted to Large Scale Visual Recognition Challenge 2014 (ILSVRC2014) and the model achieved 92.7%  test accuracy in ImageNet. ImageNet is one the on the largest data-set available over 14 million images.
+
+                      Building blocks of every Convolutional Neural Network
+                      There are four main operations in the Convolutional Neural Networks.<br>
+                      1.	Convolution<br>
+                      2.	Non Linearity (ReLU)<br>
+                      3.	Pooling or Sub Sampling<br>
+                      4.	Classification (Fully Connected Layer)
+                      
+                  </p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="../static/images/Screen Shot 2019-07-01 at 2.03.24 PM.png" class="d-block w-100" alt="...">
+                <img src="../static/images/vggarchi.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5></h5>
-                  <p></p>
+                  <h5>Convolution</h5>
+                  <p>
+                      In this layer we extract the features.  The size of the Feature Map (Convolved Feature) is controlled by three parameters that we need to decide before the convolution step is performed. The width of conv. layers (the number of channels) is rather small, starting from 64 in the first layer and then increasing by a factor of 2 after each max-pooling layer, until it reaches 512. <br>
+                      •	Filters<br>
+                      •	Stride<br> 
+                      •	Zero-padding
+                      
+                  </p>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="../static/images/vgg16.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Hidden Layers/Feature Extraction</h5>
-                  <p>•	Convolution is one of the main building blocks of a CNN.  In the case of a CNN, the convolution is performed on the input data with the use of a filter or kernel (these terms are used interchangeably) to then produce a feature map.<br>
-                      •	We execute a convolution by sliding the filter over the input. At every location, a matrix multiplication is performed and sums the result onto the feature map. After performing numerous convolutions on our input, all these different feature maps are created and are put together as the final output of the convolution layer.<br>
-                      •	ReLU layer (activation) is used to bring non-linearity to the network. It sets all the negative pixels to zero and performs element wise operation. The original image is scanned in multiple Convolution and ReLU layers for locating hidden features and patterns in the image. The output is a Rectified Feature Map.
-                      </p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="../static/images/padding.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Hidden Layers/Feature Extraction</h5>
-                  <p>Because the size of the feature map is always smaller than the input, we have to do something to prevent our feature map from shrinking. This is where we use padding. This ensures that each pixel in the image is given an opportunity to be at the center of the filter.  This is often not a problem for large images and small filters but can be a problem with small images. It can also become a problem once a number of convolutional layers are stacked.  The ‘padding‘ value of ‘same‘ calculates and adds the padding required to the input image (or feature map) to ensure that the output has the same shape as the input. Here stride is the step the convolution filter moves each time. A slide 1 means filter slides pixel by pixel.</p>
+                  <h5>Non-Linearity</h5>
+                  <p>
+                      An additional operation called ReLU has been used after every Convolution operation.<br>
+                      •	ReLU is an element wise operation (applied per pixel) and replaces all negative pixel values in the feature map by zero. <br>
+                      •	The purpose of ReLU is to introduce non-linearity in our ConvNet, since most of the real-world data we would want our ConvNet to learn would be non-linear (Convolution is a linear operation – element wise matrix multiplication and addition, so we account for non-linearity by introducing a non-linear function like ReLU). The output feature map here is also referred to as the ‘Rectified’ feature map.                          
+                  </p>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="../static/images/Pooling_Simple_max.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Hidden Layers/Feature Extraction</h5>
-                  <p>This Rectified Feature Map is fed as input to the pooling layer, which basically reduces the dimensionality of the feature map. The output is a Pooled Feature Map.Function of pooling is to continuously reduce the dimensionality i,e reduce the number of parameters ansd computation in the network. Maxpooling takes the maximum value in each window, our size is 2*2. This decrease the feature map while at the same time keeping the significant information. In this model, Spatial pooling is carried out by five max-pooling layers, performed after some of the convolutional layers.</p>
+                  <h5>The Pooling Step</h5>
+                  <p>•	We define a spatial neighborhood (2×2 window) and take the largest element from the rectified feature map within that window. We slide our 2 x 2 window by 2 cells (also called ‘stride’) and take the maximum value in each region.<br>
+                      •	This Rectified Feature Map is fed as input to the pooling layer, which basically reduces the dimensionality of the feature map, thereby reducing the number of parameters and computation in the network while keeping the significant information hence controlling overfitting.<br>
+                      •	The output is a Pooled Feature Map. Function of pooling is to continuously reduce the dimensionality i,e reduce the number of parameters and computation in the network. <br>
+                      •	Helps us arrive at an almost scale invariant representation of our image. This is very powerful since we can detect objects in an image no matter where they are. 
+                      </p>
                 </div>
               </div>
               <div class="carousel-item">
                 <img src="../static/images/softmax.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Classification</h5>
-                  <p>We Fatten the layers to convert 3D into 1D vector to pass through softmax.  The softmax is normally applied to the last layer in a neural net.  It converts the output of the last layer of your neural network into what is essentially a probability distribution. </p>
+                  <p>We Fatten the layers to convert 3D into 1D vector to pass through softmax.<br>  
+                      •	The output from the convolutional and pooling layers represent high-level features of the input image. The purpose of the Fully Connected layer is to use these features for classifying the input image into various classes based on the training dataset. The image classification task we set out to perform has two possible outputs,Benign or Malignant.
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="../static/images/firstpart.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p></p>
                 </div>
               </div>
               <div class="carousel-item">
@@ -302,6 +318,20 @@
                 </div>
               </div>
               <div class="carousel-item">
+                <img src="../static/images/val_acc2.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p></p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="../static/images/val_loss2.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p></p>
+                </div>
+              </div>
+              <div class="carousel-item">
                 <img src="../static/images/tensorflow.png" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5></h5>
@@ -316,37 +346,44 @@
                 </div>
               </div>
             <div class="carousel-item">
-              <img src="../static/images/convo.png" class="d-block w-100" alt="...">
+              <img src="../static/images/firstimage.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Convolution 1</h5>
+                <p></p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../static/images/secondimage.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Convolution 2</h5>
                 <p></p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../static/images/convo5.png" class="d-block w-100" alt="...">
+              <img src="../static/images/thirdimage.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Convolution 5</h5>
+                <h5>Convolution 6</h5>
                 <p></p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../static/images/convo9.png" class="d-block w-100" alt="...">
+              <img src="../static/images/fourthimage.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
-                <h5>Convolution 9</h5>
+                <h5>Convolution 7</h5>
                 <p></p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="../static/images/convo13.png" class="d-block w-100" alt="...">
+              <img src="../static/images/fifthimage.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Convolution 12</h5>
+                <p></p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../static/images/sixthimage.png" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Convolution 13</h5>
-                <p></p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="../static/images/convo17.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Convolution 17</h5>
                 <p></p>
               </div>
             </div>
