@@ -227,6 +227,7 @@ h1::after {
 
 .carousel-item img {
     filter: none;
+    transition: none;
 }
 
 .carousel-item h5 {
