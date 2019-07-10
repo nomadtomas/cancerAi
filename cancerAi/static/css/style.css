@@ -49,8 +49,9 @@
 }
 
 .carousel-caption h2 {
-    color: #fff;
+    color: seashell;
     font-size: 42px;
+    background: rgba(85, 85, 85, 0.584);
 }
 
 .carousel-item img {
@@ -74,8 +75,9 @@
     padding-top: 20px;
 }
 
-#cellimage {
-    /* height: 100px; */
+#cellimage img {
+    height: 450px;
+    width: 450px;
     object-fit: cover;
 }
 
