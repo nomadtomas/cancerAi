@@ -68,8 +68,12 @@
 #about .btn {
     margin-top: 20px;
     margin-bottom: 30px;
+    color: #ccc;
 }
 
+#about .btn a {
+    color: #fff;
+}
 /* about us */
 .about-content {
     padding-top: 20px;
